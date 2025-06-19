@@ -17,7 +17,6 @@ jobs:
         with:
           args: zip -qq -r build.zip ./build
       - uses: actions/create-release@v1
-        id: create_release
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
@@ -27,7 +26,6 @@ jobs:
           draft: false
           prerelease: false
       - uses: actions/upload-release-asset@v1
-        id: upload-release-assets
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
